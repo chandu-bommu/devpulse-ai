@@ -15,9 +15,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@devpulse/bff": ["packages/bff/src"],
-      "@devpulse/ai-engine": ["packages/ai-engine/src"],
-      "@devpulse/ui-system": ["packages/ui-system/src"]
+      "@inferops/bff": ["packages/bff/src"],
+      "@inferops/ai-engine": ["packages/ai-engine/src"],
+      "@inferops/ui-system": ["packages/ui-system/src"]
     }
   },
   "exclude": ["node_modules"]

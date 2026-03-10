@@ -1,5 +1,5 @@
 {
-  "name": "@devpulse/shell",
+  "name": "@inferops/shell",
   "version": "0.1.0",
   "private": true,
   "scripts": {

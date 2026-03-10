@@ -1,6 +1,6 @@
 # Step-by-Step Setup Guide
 
-> A beginner-friendly guide to get DevPulse AI running on your machine from scratch. No prior experience with monorepos or this specific stack is assumed.
+> A beginner-friendly guide to get InferOps running on your machine from scratch. No prior experience with monorepos or this specific stack is assumed.
 
 ---
 
@@ -81,7 +81,7 @@ We recommend **VS Code** (https://code.visualstudio.com) with these extensions:
 
 ## Understanding the Project
 
-Before we start, let's understand what DevPulse AI is made of. Think of it like a restaurant:
+Before we start, let's understand what InferOps is made of. Think of it like a restaurant:
 
 | Part | Restaurant Analogy | Technology |
 |------|-------------------|-----------|
@@ -104,10 +104,10 @@ The **Frontend** asks the **BFF** for data. The **BFF** gathers data from multip
 cd ~/projects  # or wherever you prefer
 
 # Clone the repo
-git clone https://github.com/your-username/devpulse-ai.git
+git clone https://github.com/your-username/inferops.git
 
 # Enter the project directory
-cd devpulse-ai
+cd inferops
 ```
 
 ### 1b. Install all dependencies
@@ -144,7 +144,7 @@ cp .env.example .env
 After cloning, your project looks like this:
 
 ```
-devpulse-ai/
+inferops/
 ├── apps/                    ← Applications (things you deploy)
 │   └── shell/               ← The main web dashboard
 │
@@ -204,7 +204,7 @@ npm run dev:bff
 You should see:
 ```
 ╔══════════════════════════════════════════════════╗
-║          DevPulse AI — BFF Server                ║
+║          InferOps — BFF Server                ║
 ║──────────────────────────────────────────────────║
 ║  REST API:    http://localhost:4000/api          ║
 ║  WebSocket:   ws://localhost:4000                ║
@@ -240,7 +240,7 @@ Open a new terminal and run these commands:
 ```bash
 # 1. Health check — is the BFF alive?
 curl http://localhost:4000/api/health
-# Expected: {"status":"healthy","service":"devpulse-bff",...}
+# Expected: {"status":"healthy","service":"inferops-bff",...}
 
 # 2. Pipeline data
 curl http://localhost:4000/api/pipelines/summary | head -c 200
@@ -264,8 +264,8 @@ curl http://localhost:4000/api/ai/alerts/clusters | head -c 200
 ### Check the Frontend
 
 1. Open http://localhost:3000 in your browser
-2. You should see the DevPulse AI dashboard with:
-   - A header with "DevPulse AI" logo and connection status
+2. You should see the InferOps dashboard with:
+   - A header with "InferOps" logo and connection status
    - Stats bar showing Success Rate, Avg Build Time, Flaky Tests, Deploy Frequency
    - Pipeline Health Board with charts and recent runs
    - DORA Metrics with 4 metric cards and a radar chart
@@ -372,8 +372,8 @@ Let's make a small change to understand the development workflow.
 ### Example: Change the header title
 
 1. Open `apps/shell/src/components/Header.tsx`
-2. Find the line with `DevPulse AI`
-3. Change it to `DevPulse AI - My Custom Dashboard`
+2. Find the line with `InferOps`
+3. Change it to `InferOps - My Custom Dashboard`
 4. Save the file
 5. Your browser auto-refreshes (Next.js Hot Module Replacement)
 
@@ -389,7 +389,7 @@ const router = Router();
 router.get('/custom/hello', (req, res) => {
   res.json({
     success: true,
-    data: { message: 'Hello from DevPulse AI!' },
+    data: { message: 'Hello from InferOps!' },
     timestamp: new Date().toISOString(),
   });
 });

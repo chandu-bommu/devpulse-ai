@@ -2,16 +2,16 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "metadata": {
-    "description": "Azure Monitor configuration for DevPulse AI — Application Insights + Log Analytics"
+    "description": "Azure Monitor configuration for InferOps — Application Insights + Log Analytics"
   },
   "parameters": {
     "workspaceName": {
       "type": "string",
-      "defaultValue": "devpulse-log-analytics"
+      "defaultValue": "inferops-log-analytics"
     },
     "appInsightsName": {
       "type": "string",
-      "defaultValue": "devpulse-app-insights"
+      "defaultValue": "inferops-app-insights"
     },
     "location": {
       "type": "string",

@@ -148,7 +148,7 @@ export default function DashboardPage() {
         {/* Footer */}
         <footer className="text-center py-8 border-t border-surface-800/50">
           <p className="text-xs text-surface-600">
-            DevPulse AI v0.1.0 — Intelligent Observability & Incident Intelligence Platform
+            InferOps v0.1.0 — Intelligent Observability & Incident Intelligence Platform
           </p>
           <p className="text-[10px] text-surface-700 mt-1">
             Built with Next.js + Express BFF + AI Engine | Mock Data Mode

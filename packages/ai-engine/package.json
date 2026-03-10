@@ -1,5 +1,5 @@
 {
-  "name": "@devpulse/ai-engine",
+  "name": "@inferops/ai-engine",
   "version": "0.1.0",
   "private": true,
   "description": "LLM orchestration logic — anomaly detection, incident prediction, alert deduplication",

@@ -1,5 +1,5 @@
 {
-  "name": "@devpulse/ui-system",
+  "name": "@inferops/ui-system",
   "version": "0.1.0",
   "private": true,
   "description": "Lit Web Components Design System + Storybook — embeddable charts and UI primitives",

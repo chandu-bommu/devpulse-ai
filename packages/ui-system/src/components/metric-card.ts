@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('devpulse-metric-card')
-export class DevpulseMetricCard extends LitElement {
+@customElement('inferops-metric-card')
+export class InferopsMetricCard extends LitElement {
   @property({ type: String }) label = 'Metric';
   @property({ type: String }) value = '--';
   @property({ type: String }) unit = '';
@@ -89,6 +89,6 @@ export class DevpulseMetricCard extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'devpulse-metric-card': DevpulseMetricCard;
+    'inferops-metric-card': InferopsMetricCard;
   }
 }

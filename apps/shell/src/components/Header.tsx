@@ -18,7 +18,7 @@ export function Header({ wsConnected }: HeaderProps) {
           </div>
           <div>
             <h1 className="text-lg font-bold tracking-tight">
-              DevPulse<span className="gradient-text ml-0.5">AI</span>
+              InferOps<span className="gradient-text ml-0.5">AI</span>
             </h1>
             <p className="text-[10px] text-surface-500 -mt-0.5 tracking-wider uppercase">
               Observability & Incident Intelligence

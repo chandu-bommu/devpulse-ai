@@ -1,4 +1,4 @@
-# Contributing to DevPulse AI
+# Contributing to InferOps
 
 > Everything you need to know to contribute code, fix bugs, or add features. Written for developers of all experience levels.
 
@@ -28,8 +28,8 @@
 1. **Fork** the repository on GitHub
 2. **Clone** your fork:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/devpulse-ai.git
-   cd devpulse-ai
+   git clone https://github.com/YOUR_USERNAME/inferops.git
+   cd inferops
    ```
 3. **Install** dependencies:
    ```bash
@@ -85,7 +85,7 @@ Both servers have automatic hot reload:
 
 ## Project Scripts Reference
 
-Run these from the **project root** (`devpulse-ai/`):
+Run these from the **project root** (`inferops/`):
 
 | Command | What It Does |
 |---------|-------------|
@@ -102,10 +102,10 @@ Turborepo runs tasks across all packages with intelligent caching:
 
 ```bash
 # Build only the shell app (and its dependencies)
-npx turbo run build --filter=@devpulse/shell
+npx turbo run build --filter=@inferops/shell
 
 # Build only the BFF
-npx turbo run build --filter=@devpulse/bff
+npx turbo run build --filter=@inferops/bff
 
 # See the dependency graph
 npx turbo run build --dry-run
@@ -145,8 +145,8 @@ import { readFile } from 'fs';
 import express from 'express';
 import { io } from 'socket.io-client';
 
-// 3. Internal packages (@devpulse/*)
-import { IncidentPredictor } from '@devpulse/ai-engine';
+// 3. Internal packages (@inferops/*)
+import { IncidentPredictor } from '@inferops/ai-engine';
 
 // 4. Relative imports (from furthest to nearest)
 import { cn } from '@/lib/utils';
@@ -371,8 +371,8 @@ const { data: myData } = useBFFData<any>('/api/my-feature/data', 30000);
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('devpulse-my-widget')
-export class DevpulseMyWidget extends LitElement {
+@customElement('inferops-my-widget')
+export class InferopsMyWidget extends LitElement {
   @property({ type: String }) label = 'Default';
   @property({ type: Number }) value = 0;
 
@@ -399,7 +399,7 @@ export class DevpulseMyWidget extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'devpulse-my-widget': DevpulseMyWidget;
+    'inferops-my-widget': InferopsMyWidget;
   }
 }
 ```
@@ -409,13 +409,13 @@ declare global {
 In `packages/ui-system/src/index.ts`:
 
 ```typescript
-export { DevpulseMyWidget } from './components/my-widget';
+export { InferopsMyWidget } from './components/my-widget';
 ```
 
 ### 3. Usage
 
 ```html
-<devpulse-my-widget label="CPU Usage" value="73"></devpulse-my-widget>
+<inferops-my-widget label="CPU Usage" value="73"></inferops-my-widget>
 ```
 
 ---
@@ -639,4 +639,4 @@ kill -9 <PID>
 
 ---
 
-*Thank you for contributing to DevPulse AI! Every PR makes the platform better for the entire community.*
+*Thank you for contributing to InferOps! Every PR makes the platform better for the entire community.*

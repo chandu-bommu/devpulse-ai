@@ -1,5 +1,5 @@
 {
-  "name": "@devpulse/bff",
+  "name": "@inferops/bff",
   "version": "0.1.0",
   "private": true,
   "description": "Node.js/Express BFF layer — orchestrates upstream sources, AI enrichment, WebSocket push",

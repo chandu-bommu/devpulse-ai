@@ -5,7 +5,7 @@ const router = Router();
 router.get('/', (_req: Request, res: Response) => {
   res.json({
     status: 'healthy',
-    service: 'devpulse-bff',
+    service: 'inferops-bff',
     version: '0.1.0',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),

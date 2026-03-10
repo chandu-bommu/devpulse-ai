@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`
 ╔══════════════════════════════════════════════════╗
-║          DevPulse AI — BFF Server                ║
+║          InferOps — BFF Server                ║
 ║──────────────────────────────────────────────────║
 ║  REST API:    http://localhost:${PORT}/api          ║
 ║  WebSocket:   ws://localhost:${PORT}                ║

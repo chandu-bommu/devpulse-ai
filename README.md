@@ -1,4 +1,4 @@
-# DevPulse AI
+# InferOps
 
 **Intelligent Full-Stack Observability & Incident Intelligence Platform**
 
@@ -15,7 +15,7 @@ A real-time developer operations dashboard that ingests logs, metrics, and deplo
 
 ## Table of Contents
 
-- [Why DevPulse AI?](#why-devpulse-ai)
+- [Why InferOps?](#why-inferops)
 - [Core Features](#core-features)
 - [Live Demo](#live-demo)
 - [Quick Start (2 minutes)](#quick-start-2-minutes)
@@ -33,11 +33,11 @@ A real-time developer operations dashboard that ingests logs, metrics, and deplo
 
 ---
 
-## Why DevPulse AI?
+## Why InferOps?
 
-Most observability tools are either **expensive** (Datadog costs $23+/host/month), **complex** to set up (Grafana + Prometheus + AlertManager), or **lack AI** capabilities. DevPulse AI fills this gap:
+Most observability tools are either **expensive** (Datadog costs $23+/host/month), **complex** to set up (Grafana + Prometheus + AlertManager), or **lack AI** capabilities. InferOps fills this gap:
 
-| Problem | DevPulse AI Solution |
+| Problem | InferOps Solution |
 |---------|---------------------|
 | Noisy alerts — 40 Slack pings for 1 incident | Smart Alert Deduplication clusters by root cause |
 | "Is it safe to deploy?" — unknown risk | AI Incident Predictor scores risk with reasoning |
@@ -78,9 +78,9 @@ Aggregates alerts from multiple sources, clusters them by root cause using AI em
 
 ### 5. Lit Web Components Design System
 Ships framework-agnostic components embeddable in any app:
-- `<devpulse-status-badge>` — Pipeline status with animated dot
-- `<devpulse-metric-card>` — Metric display with trend indicator
-- `<devpulse-risk-gauge>` — SVG circular risk score gauge
+- `<inferops-status-badge>` — Pipeline status with animated dot
+- `<inferops-metric-card>` — Metric display with trend indicator
+- `<inferops-risk-gauge>` — SVG circular risk score gauge
 
 ---
 
@@ -89,8 +89,8 @@ Ships framework-agnostic components embeddable in any app:
 The app runs in **Mock Data Mode** by default — **zero signup, zero API keys required**. Every panel is populated with realistic simulated data that refreshes in real-time.
 
 ```bash
-git clone https://github.com/chandu-bommu/devpulse-ai.git
-cd devpulse-ai
+git clone https://github.com/chandu-bommu/inferops.git
+cd inferops
 npm install
 npm run dev:all
 # Open http://localhost:3000
@@ -111,8 +111,8 @@ npm run dev:all
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/chandu-bommu/devpulse-ai.git
-cd devpulse-ai
+git clone https://github.com/chandu-bommu/inferops.git
+cd inferops
 
 # 2. Install all dependencies (monorepo — one install handles everything)
 npm install
@@ -133,7 +133,7 @@ npm run dev:all
 
 ```bash
 curl http://localhost:4000/api/health
-# → {"status":"healthy","service":"devpulse-bff","version":"0.1.0",...}
+# → {"status":"healthy","service":"inferops-bff","version":"0.1.0",...}
 ```
 
 > **New to this project?** Read the full [Step-by-Step Setup Guide](docs/SETUP.md) for a beginner-friendly walkthrough.
@@ -178,7 +178,7 @@ curl http://localhost:4000/api/health
 ## Repo Structure
 
 ```
-devpulse-ai/
+inferops/
 ├── apps/
 │   └── shell/                  ← Next.js 14 dashboard (frontend)
 │       ├── src/app/            ← Pages (layout.tsx, page.tsx, globals.css)
@@ -297,7 +297,7 @@ ARM template in `infra/azure/monitor-config.json` provisions:
 
 ```bash
 az deployment group create \
-  --resource-group devpulse-rg \
+  --resource-group inferops-rg \
   --template-file infra/azure/monitor-config.json
 ```
 
@@ -382,4 +382,4 @@ MIT — free for personal and commercial use.
 
 **Built by [Chandra Reddy](https://github.com/chandu-bommu) — Staff Engineer**
 
-*If you find DevPulse AI useful, please star the repository!*
+*If you find InferOps useful, please star the repository!*

@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('devpulse-status-badge')
-export class DevpulseStatusBadge extends LitElement {
+@customElement('inferops-status-badge')
+export class InferopsStatusBadge extends LitElement {
   @property({ type: String }) status: 'success' | 'failure' | 'running' | 'cancelled' = 'success';
   @property({ type: String }) label = '';
 
@@ -64,6 +64,6 @@ export class DevpulseStatusBadge extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'devpulse-status-badge': DevpulseStatusBadge;
+    'inferops-status-badge': InferopsStatusBadge;
   }
 }

@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('devpulse-risk-gauge')
-export class DevpulseRiskGauge extends LitElement {
+@customElement('inferops-risk-gauge')
+export class InferopsRiskGauge extends LitElement {
   @property({ type: Number }) score = 0;
   @property({ type: String }) level: 'low' | 'medium' | 'high' | 'critical' = 'low';
 
@@ -82,6 +82,6 @@ export class DevpulseRiskGauge extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'devpulse-risk-gauge': DevpulseRiskGauge;
+    'inferops-risk-gauge': InferopsRiskGauge;
   }
 }

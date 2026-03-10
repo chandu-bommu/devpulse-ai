@@ -1,6 +1,6 @@
 # Architecture Guide
 
-> A deep dive into how DevPulse AI is designed, why each decision was made, and how every piece fits together.
+> A deep dive into how InferOps is designed, why each decision was made, and how every piece fits together.
 
 ---
 
@@ -25,7 +25,7 @@
 
 ## High-Level Overview
 
-DevPulse AI follows a **3-tier architecture** with a clear separation of concerns:
+InferOps follows a **3-tier architecture** with a clear separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -64,7 +64,7 @@ DevPulse AI follows a **3-tier architecture** with a clear separation of concern
 | **Monorepo** | All packages live together. Shared types, atomic deployments, single `npm install`. Turborepo handles build caching and task orchestration. |
 | **Mock Data Mode** | Every data source has a mock generator. The app works out-of-the-box with zero configuration — critical for demos, development, and CI testing. |
 | **WebSocket + REST** | REST for initial page load data (cacheable, simple). WebSocket for live pipeline events and anomaly streams (low-latency, push-based). |
-| **Lit Web Components** | Framework-agnostic UI primitives. Anyone can embed `<devpulse-risk-gauge>` in React, Angular, Vue, or plain HTML. |
+| **Lit Web Components** | Framework-agnostic UI primitives. Anyone can embed `<inferops-risk-gauge>` in React, Angular, Vue, or plain HTML. |
 
 ---
 
@@ -121,7 +121,7 @@ DevPulse AI follows a **3-tier architecture** with a clear separation of concern
 ## Monorepo Structure
 
 ```
-devpulse-ai/
+inferops/
 │
 ├── apps/                          # Deployable applications
 │   └── shell/                     # Next.js 14 — the main dashboard
@@ -171,9 +171,9 @@ devpulse-ai/
 │       ├── src/
 │       │   ├── index.ts           # Public exports
 │       │   └── components/
-│       │       ├── status-badge.ts    # <devpulse-status-badge>
-│       │       ├── metric-card.ts     # <devpulse-metric-card>
-│       │       └── risk-gauge.ts      # <devpulse-risk-gauge>
+│       │       ├── status-badge.ts    # <inferops-status-badge>
+│       │       ├── metric-card.ts     # <inferops-metric-card>
+│       │       └── risk-gauge.ts      # <inferops-risk-gauge>
 │       └── package.json
 │
 ├── infra/                         # Infrastructure as Code
@@ -269,7 +269,7 @@ useBFFData('/api/pipelines/summary', 30000)
 
 **Technology**: Express.js, Socket.IO, TypeScript, tsx (for dev mode)
 
-The BFF (Backend For Frontend) is the **central nervous system** of DevPulse AI. It sits between the frontend and all external data sources.
+The BFF (Backend For Frontend) is the **central nervous system** of InferOps. It sits between the frontend and all external data sources.
 
 ```
 Client Request: GET /api/pipelines/summary
@@ -401,20 +401,20 @@ Three embeddable components that work in any framework:
 
 | Component | Tag | Props |
 |-----------|-----|-------|
-| Status Badge | `<devpulse-status-badge>` | `status`, `label` |
-| Metric Card | `<devpulse-metric-card>` | `label`, `value`, `unit`, `trend`, `rating` |
-| Risk Gauge | `<devpulse-risk-gauge>` | `score`, `level` |
+| Status Badge | `<inferops-status-badge>` | `status`, `label` |
+| Metric Card | `<inferops-metric-card>` | `label`, `value`, `unit`, `trend`, `rating` |
+| Risk Gauge | `<inferops-risk-gauge>` | `score`, `level` |
 
 **Usage in any HTML page:**
 
 ```html
-<script type="module" src="@devpulse/ui-system/dist/index.js"></script>
+<script type="module" src="@inferops/ui-system/dist/index.js"></script>
 
-<devpulse-status-badge status="success" label="Deploy v2.4.1">
-</devpulse-status-badge>
+<inferops-status-badge status="success" label="Deploy v2.4.1">
+</inferops-status-badge>
 
-<devpulse-risk-gauge score="73" level="high">
-</devpulse-risk-gauge>
+<inferops-risk-gauge score="73" level="high">
+</inferops-risk-gauge>
 ```
 
 **Why Lit (not React components)?**
@@ -448,7 +448,7 @@ Three embeddable components that work in any framework:
 │  │              │                   │    │
 │  │  ┌───────────▼────────────┐      │    │
 │  │  │  Nginx Ingress + TLS   │      │    │
-│  │  │  api.devpulse.ai       │      │    │
+│  │  │  api.inferops.ai       │      │    │
 │  │  └────────────────────────┘      │    │
 │  └──────────────────────────────────┘    │
 │                                          │
@@ -469,7 +469,7 @@ Three embeddable components that work in any framework:
 
 ### Complete Request Lifecycle
 
-Here's what happens when a user opens the DevPulse AI dashboard:
+Here's what happens when a user opens the InferOps dashboard:
 
 ```
 Step 1: Browser loads http://localhost:3000

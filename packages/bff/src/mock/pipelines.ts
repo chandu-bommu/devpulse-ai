@@ -44,12 +44,12 @@ const workflows = [
 ];
 
 const repos = [
-  'devpulse-ai/frontend',
-  'devpulse-ai/bff-service',
-  'devpulse-ai/auth-service',
-  'devpulse-ai/payment-api',
-  'devpulse-ai/notification-hub',
-  'devpulse-ai/infra-config',
+  'inferops/frontend',
+  'inferops/bff-service',
+  'inferops/auth-service',
+  'inferops/payment-api',
+  'inferops/notification-hub',
+  'inferops/infra-config',
 ];
 
 const authors = ['chandra.r', 'alex.k', 'priya.m', 'james.w', 'sarah.l', 'raj.p'];

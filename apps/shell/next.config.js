@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@devpulse/ui-system'],
+  transpilePackages: ['@inferops/ui-system'],
 };
 
 module.exports = nextConfig;

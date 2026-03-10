@@ -1,6 +1,6 @@
 # API Reference
 
-> Complete reference for every REST endpoint and WebSocket event in the DevPulse AI BFF server.
+> Complete reference for every REST endpoint and WebSocket event in the InferOps BFF server.
 
 ---
 
@@ -24,7 +24,7 @@
 | Environment | Base URL |
 |------------|---------|
 | **Local Development** | `http://localhost:4000` |
-| **Production** | `https://api.devpulse.ai` |
+| **Production** | `https://api.inferops.ai` |
 
 ### Standard Response Format
 
@@ -79,7 +79,7 @@ curl http://localhost:4000/api/health
 ```json
 {
   "status": "healthy",
-  "service": "devpulse-bff",
+  "service": "inferops-bff",
   "version": "0.1.0",
   "uptime": 76.188,
   "timestamp": "2026-03-10T05:32:48.487Z",
@@ -109,7 +109,7 @@ curl http://localhost:4000/api/health
 | Field | Type | Description |
 |-------|------|-------------|
 | `status` | `string` | `"healthy"` or `"degraded"` |
-| `service` | `string` | Always `"devpulse-bff"` |
+| `service` | `string` | Always `"inferops-bff"` |
 | `version` | `string` | Semantic version of the BFF |
 | `uptime` | `number` | Seconds since server started |
 | `timestamp` | `string` | ISO 8601 timestamp |
@@ -141,7 +141,7 @@ curl http://localhost:4000/api/pipelines/summary
       {
         "id": "run-1710045168-abc123",
         "workflowName": "CI/CD Pipeline",
-        "repo": "devpulse-ai/core-api",
+        "repo": "inferops/core-api",
         "branch": "main",
         "status": "success",
         "duration": 245,
@@ -562,7 +562,7 @@ import { io } from 'socket.io-client';
 const socket = io('http://localhost:4000');
 
 socket.on('connect', () => {
-  console.log('Connected to DevPulse AI BFF');
+  console.log('Connected to InferOps BFF');
 });
 
 socket.on('disconnect', () => {
@@ -585,7 +585,7 @@ socket.on('pipeline:event', (data) => {
 {
   "id": "run-1710045168-xyz789",
   "workflowName": "Deploy to Production",
-  "repo": "devpulse-ai/web-app",
+  "repo": "inferops/web-app",
   "branch": "main",
   "status": "success",
   "duration": 189,

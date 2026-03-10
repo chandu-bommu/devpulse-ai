@@ -1,3 +1,3 @@
-export { DevpulseStatusBadge } from './components/status-badge';
-export { DevpulseMetricCard } from './components/metric-card';
-export { DevpulseRiskGauge } from './components/risk-gauge';
+export { InferopsStatusBadge } from './components/status-badge';
+export { InferopsMetricCard } from './components/metric-card';
+export { InferopsRiskGauge } from './components/risk-gauge';
